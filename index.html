@@ -1,1 +1,114 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="./favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="./logo192.png"/><link rel="manifest" href="./manifest.json"/><title>USE YOURSELF</title><link href="./static/css/2.8d28a342.chunk.css" rel="stylesheet"><link href="./static/css/main.d41114fc.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(e){function r(r){for(var n,l,f=r[0],i=r[1],a=r[2],c=0,s=[];c<f.length;c++)l=f[c],Object.prototype.hasOwnProperty.call(o,l)&&o[l]&&s.push(o[l][0]),o[l]=0;for(n in i)Object.prototype.hasOwnProperty.call(i,n)&&(e[n]=i[n]);for(p&&p(r);s.length;)s.shift()();return u.push.apply(u,a||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,f=1;f<t.length;f++){var i=t[f];0!==o[i]&&(n=!1)}n&&(u.splice(r--,1),e=l(l.s=t[0]))}return e}var n={},o={1:0},u=[];function l(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,l),t.l=!0,t.exports}l.m=e,l.c=n,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(e,r){if(1&r&&(e=l(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)l.d(t,n,function(r){return e[r]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="./";var f=this.webpackJsonpuseyourself=this.webpackJsonpuseyourself||[],i=f.push.bind(f);f.push=r,f=f.slice();for(var a=0;a<f.length;a++)r(f[a]);var p=i;t()}([])</script><script src="./static/js/2.2d8e04e2.chunk.js"></script><script src="./static/js/main.f9837e68.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#5a7d6a" />
+  <title>Daily Nutrition Journal · 个人营养日记</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">🌿</span>
+        <div>
+          <h1>Daily Nutrition Journal</h1>
+          <p class="subtitle">果蔬汁 · 高蛋白 · 长期追踪</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btn-today" class="btn primary">回到本周</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="calendar-nav">
+        <button id="prev-week" class="nav-btn" aria-label="上一周">‹</button>
+        <div class="week-info">
+          <h2 id="week-label">加载中…</h2>
+          <p id="week-range" class="week-range"></p>
+        </div>
+        <button id="next-week" class="nav-btn" aria-label="下一周">›</button>
+      </section>
+
+      <section class="date-filter">
+        <div class="filter-label">按日期快速定位：</div>
+        <div class="date-chips" id="date-chips"></div>
+      </section>
+
+      <section class="hero-card">
+        <h2>核心原则</h2>
+        <div class="principles">
+          <div class="principle">
+            <span class="num">01</span>
+            <div>
+              <strong>先汁后蛋白</strong>
+              <p>空腹果蔬汁 → 20-30分钟 → 高蛋白早餐</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="num">02</span>
+            <div>
+              <strong>低GI + 高蛋白</strong>
+              <p>每人早餐25-35g蛋白，稳定血糖与饱腹</p>
+            </div>
+          </div>
+          <div class="principle">
+            <span class="num">03</span>
+            <div>
+              <strong>美容与轻体</strong>
+              <p>抗氧化果蔬 + 胶原合成原料（蛋白）</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="fixed-breakfast" id="fixed-breakfast">
+        <h3>本周固定高蛋白早餐</h3>
+        <div class="breakfast-formula" id="breakfast-formula"></div>
+        <p class="protein-target" id="protein-target"></p>
+        <p class="sequence" id="sequence"></p>
+      </section>
+
+      <section class="days-section">
+        <div class="section-header">
+          <h2>每日果蔬汁</h2>
+          <span class="badge" id="current-badge">当前周</span>
+        </div>
+        <div class="days-grid" id="days-grid"></div>
+      </section>
+
+      <section class="todo-section">
+        <h2>采购 To-Do</h2>
+        <div class="todo-columns">
+          <div class="todo-col">
+            <h3>周日采购</h3>
+            <ul class="todo-list" id="todo-sun"></ul>
+          </div>
+          <div class="todo-col">
+            <h3>周三补货</h3>
+            <ul class="todo-list" id="todo-wed"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="history-section">
+        <h2>历史周次</h2>
+        <div class="week-list" id="week-list"></div>
+        <p class="hint">数据来自 <code>data/weeks.json</code>，每周日自动化会自动追加新周计划。</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Started 2026-11-01 · Beauty · Blood-sugar · Lean</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
