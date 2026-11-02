@@ -3,10 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#5a7d6a" />
+  <meta name="description" content="果蔬汁 + 高蛋白早餐 · 美容控糖轻体" />
+
+  <!-- iOS Safari PWA -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="theme-color" content="#5a7d6a" />
-  <title>Daily Nutrition Journal · 个人营养日记</title>
+  <meta name="apple-mobile-web-app-title" content="营养日记" />
+  <link rel="apple-touch-icon" href="logo192.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="logo192.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="logo512.png" />
+
+  <!-- Standard PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+
+  <title>营养日记 · Daily Nutrition Journal</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -110,5 +123,12 @@
   </div>
 
   <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").catch(() => {});
+      });
+    }
+  </script>
 </body>
 </html>
