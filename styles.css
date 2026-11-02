@@ -32,6 +32,36 @@ body {
   padding: 16px 14px 48px;
 }
 
+/* iOS install tip */
+.ios-tip {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #3d5a4c;
+  color: #fff;
+  padding: 12px 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.ios-tip-inner { max-width: 640px; margin: 0 auto; }
+.ios-tip strong { display: block; font-size: 0.95rem; margin-bottom: 6px; }
+.ios-tip p { font-size: 0.82rem; line-height: 1.5; opacity: 0.95; margin-bottom: 10px; }
+.ios-share {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+.ios-tip-close {
+  border: 1px solid rgba(255,255,255,0.4);
+  background: transparent;
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
