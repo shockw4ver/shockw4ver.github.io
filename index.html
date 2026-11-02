@@ -6,15 +6,16 @@
   <meta name="theme-color" content="#5a7d6a" />
   <meta name="description" content="果蔬汁 + 高蛋白早餐 · 美容控糖轻体" />
 
-  <!-- iOS Safari PWA -->
+  <!-- iOS Safari PWA — critical for Add to Home Screen -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="营养日记" />
-  <link rel="apple-touch-icon" href="logo192.png" />
+  <link rel="apple-touch-icon" href="icon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icon.svg" />
   <link rel="apple-touch-icon" sizes="192x192" href="logo192.png" />
   <link rel="apple-touch-icon" sizes="512x512" href="logo512.png" />
 
-  <!-- Standard PWA -->
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon.ico" sizes="any" />
@@ -25,6 +26,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- iOS 安装提示 -->
+  <div id="ios-tip" class="ios-tip" style="display:none">
+    <div class="ios-tip-inner">
+      <strong>安装到主屏幕</strong>
+      <p>1. 点底部分享按钮 <span class="ios-share">□↑</span><br>
+         2. 向下滑，点「添加到主屏幕」<br>
+         3. 再点右上角「添加」</p>
+      <button type="button" id="ios-tip-close" class="ios-tip-close">知道了</button>
+    </div>
+  </div>
+
   <div class="app">
     <header class="header">
       <div class="logo">
@@ -129,6 +141,20 @@
         navigator.serviceWorker.register("./sw.js").catch(() => {});
       });
     }
+    // iOS 安装提示（仅 Safari 且未在独立模式）
+    (function () {
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      var isStandalone = window.navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
+      var tip = document.getElementById("ios-tip");
+      var closed = localStorage.getItem("ios-tip-closed") === "1";
+      if (isIOS && !isStandalone && !closed && tip) {
+        tip.style.display = "block";
+        document.getElementById("ios-tip-close").onclick = function () {
+          tip.style.display = "none";
+          localStorage.setItem("ios-tip-closed", "1");
+        };
+      }
+    })();
   </script>
 </body>
 </html>
