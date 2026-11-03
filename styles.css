@@ -229,3 +229,10 @@ body {
   .principles { grid-template-columns: repeat(3, 1fr); }
   .logo h1 { font-size: 1.3rem; }
 }
+
+.routine-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:20px;box-shadow:var(--shadow)}
+.routine-section h2{font-size:1rem;margin-bottom:10px;color:var(--sage-dark)}
+.routine-list{padding-left:22px;color:var(--muted);font-size:.84rem}
+.routine-list li{padding:4px 0}
+.day-meta{font-size:.72rem;color:var(--sage-dark);margin:0 0 7px}
+.day-note{font-size:.75rem;color:var(--muted);margin-top:8px}
