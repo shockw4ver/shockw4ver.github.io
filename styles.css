@@ -236,3 +236,8 @@ body {
 .routine-list li{padding:4px 0}
 .day-meta{font-size:.72rem;color:var(--sage-dark);margin:0 0 7px}
 .day-note{font-size:.75rem;color:var(--muted);margin-top:8px}
+
+.storage-section{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-top:24px}
+.storage-section h2{font-size:1rem;margin-bottom:10px;color:var(--sage-dark)}
+.storage-section ul{padding-left:20px;color:var(--muted);font-size:.8rem}
+.storage-section li{padding:4px 0}
